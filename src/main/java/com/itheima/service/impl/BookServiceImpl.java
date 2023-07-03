@@ -11,15 +11,12 @@ import java.util.List;
 
 @Service(value = "bookService")
 public class BookServiceImpl implements BookService {
-    @Autowired
-    BookDao bookDao;
 
     @Autowired
     BrandDao brandMapper;
 
     @Override
     public void SayBookNameService() {
-        bookDao.SayBookName();
         System.out.println("SayBookNameService");
     }
 

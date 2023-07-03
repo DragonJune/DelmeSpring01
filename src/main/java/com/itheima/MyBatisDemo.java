@@ -2,11 +2,14 @@ package com.itheima;
 
 import com.itheima.config.SpringConfig;
 import com.itheima.dao.BookDao;
+import com.itheima.dao.BrandDao;
+import com.itheima.pojo.Brand;
 import com.itheima.service.BookService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
+import java.util.List;
 
 public class MyBatisDemo {
     public static void main(String[] args) throws IOException {
@@ -24,10 +27,9 @@ public class MyBatisDemo {
 
 //        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfig.class);
-        BookDao bookDao = applicationContext.getBean(BookDao.class);
-        bookDao.SayBookName();
+        BrandDao brandDao = applicationContext.getBean(BrandDao.class);
 
-//        BookService bookService = (BookService) applicationContext.getBean("bookService");
-//        bookService.PrintBrandList();
+        BookService bookService = (BookService) applicationContext.getBean("bookService");
+        bookService.PrintBrandList();
     }
 }

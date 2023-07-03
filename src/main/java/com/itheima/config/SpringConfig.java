@@ -6,7 +6,7 @@ import org.springframework.context.annotation.*;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan({"com.itheima.dao.impl", "com.itheima.pojo", "com.itheima.service"})
+@ComponentScan({"com.itheima"})
 @PropertySource("jdbc.properties")
 @Import({JdbcConfig.class, MyBatisConfig.class})
 public class SpringConfig {

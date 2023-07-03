@@ -16,7 +16,7 @@ public class JdbcConfig {
     private String password;
 
     @Bean
-    public DataSource dataSource(BookDao bookDao) {
+    public DataSource dataSource() {
         DruidDataSource ds = new DruidDataSource();
 
         ds.setDriverClassName(driver);
